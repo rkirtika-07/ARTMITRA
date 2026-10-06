@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - ArtVista</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <header class="dashboard-header">
+
+        <h1>🎨 ArtVista Admin Dashboard</h1>
+
+        <a href="index.html">
+            <button>Logout</button>
+        </a>
+
+    </header>
+
+
+    <section class="dashboard-content">
+
+        <h2>Admin Overview</h2>
+
+
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+                <h3>Total Customers</h3>
+                <p id="totalUsers">0</p>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Total Orders</h3>
+                <p id="totalOrders">0</p>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Pending Orders</h3>
+                <p id="pendingOrders">0</p>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Accepted Orders</h3>
+                <p id="acceptedOrders">0</p>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Rejected Orders</h3>
+                <p id="rejectedOrders">0</p>
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-section">
+
+            <h2>Order History</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Order ID</th>
+
+                        <th>Customer</th>
+
+                        <th>Artwork</th>
+
+                        <th>Amount</th>
+
+                        <th>Date</th>
+
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="adminOrderTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div class="dashboard-section">
+
+            <h2>Admin Responsibilities</h2>
+
+            <ul class="feature-list">
+
+                <li>View total customers</li>
+
+                <li>View total artworks</li>
+
+                <li>View total orders</li>
+
+                <li>View active order status</li>
+
+                <li>View complete order history</li>
+
+                <li>Monitor the gallery system</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

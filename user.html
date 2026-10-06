@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>User Dashboard - ArtVista</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <header class="dashboard-header">
+
+        <h1>🎨 ArtVista User Dashboard</h1>
+
+        <a href="index.html">
+            <button>Logout</button>
+        </a>
+
+    </header>
+
+
+    <section class="dashboard-content">
+
+        <h2>Welcome to ArtVista</h2>
+
+        <p>
+            Browse artworks, add your favorite artworks to cart
+            and place orders.
+        </p>
+
+
+        <!-- User Navigation -->
+
+        <div class="user-menu">
+
+            <a href="index.html#gallery">
+                Browse Gallery
+            </a>
+
+            <a href="#cart">
+                My Cart
+            </a>
+
+            <a href="#orders">
+                My Orders
+            </a>
+
+            <a href="index.html#auction">
+                Auctions
+            </a>
+
+        </div>
+
+
+        <!-- Cart -->
+
+        <div class="dashboard-section" id="cart">
+
+            <h2>My Cart</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Artwork</th>
+
+                        <th>Price</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="cartTable">
+
+                </tbody>
+
+            </table>
+
+
+            <button onclick="placeOrder()"
+                    class="order-button">
+
+                Place Order
+
+            </button>
+
+        </div>
+
+
+        <!-- Orders -->
+
+        <div class="dashboard-section" id="orders">
+
+            <h2>My Orders</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Order ID</th>
+
+                        <th>Artwork</th>
+
+                        <th>Amount</th>
+
+                        <th>Date</th>
+
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="userOrderTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- Order Status -->
+
+        <div class="dashboard-section">
+
+            <h2>Order Status</h2>
+
+            <div class="status-flow">
+
+                <div>
+                    <span>1</span>
+                    <p>Order Placed</p>
+                </div>
+
+                <div>
+                    <span>2</span>
+                    <p>Pending</p>
+                </div>
+
+                <div>
+                    <span>3</span>
+                    <p>Accepted</p>
+                </div>
+
+                <div>
+                    <span>4</span>
+                    <p>Delivered</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Reviews -->
+
+        <div class="dashboard-section">
+
+            <h2>Write a Review</h2>
+
+            <div class="form-box">
+
+                <input type="text"
+                       placeholder="Artwork name">
+
+                <select>
+
+                    <option>5 - Excellent</option>
+                    <option>4 - Very Good</option>
+                    <option>3 - Good</option>
+                    <option>2 - Average</option>
+                    <option>1 - Poor</option>
+
+                </select>
+
+                <textarea
+                    placeholder="Write your review">
+                </textarea>
+
+                <button onclick="submitReview()">
+                    Submit Review
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- User Responsibilities -->
+
+        <div class="dashboard-section">
+
+            <h2>User Features</h2>
+
+            <ul class="feature-list">
+
+                <li>View list of artworks</li>
+
+                <li>Search artworks</li>
+
+                <li>Filter artworks by category</li>
+
+                <li>Add artwork to cart</li>
+
+                <li>Place an order</li>
+
+                <li>View order status</li>
+
+                <li>Participate in auctions</li>
+
+                <li>Submit reviews</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script>
+
+function submitReview() {
+
+    alert("Thank you! Your review has been submitted.");
+
+}
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

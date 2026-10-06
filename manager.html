@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Manager Dashboard - ArtVista</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <header class="dashboard-header">
+
+        <h1>🎨 ArtVista Manager Dashboard</h1>
+
+        <a href="index.html">
+            <button>Logout</button>
+        </a>
+
+    </header>
+
+
+    <section class="dashboard-content">
+
+        <h2>Manager Overview</h2>
+
+
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+
+                <h3>Total Orders</h3>
+
+                <p id="managerTotal">0</p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <h3>Pending</h3>
+
+                <p id="managerPending">0</p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <h3>Accepted</h3>
+
+                <p id="managerAccepted">0</p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <h3>Rejected</h3>
+
+                <p id="managerRejected">0</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Orders -->
+
+        <div class="dashboard-section">
+
+            <h2>Manage Orders</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Order ID</th>
+
+                        <th>Customer</th>
+
+                        <th>Artwork</th>
+
+                        <th>Amount</th>
+
+                        <th>Status</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="managerOrderTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- Add Artwork -->
+
+        <div class="dashboard-section">
+
+            <h2>Add New Artwork</h2>
+
+            <div class="form-box">
+
+                <label>Artwork Name</label>
+
+                <input type="text"
+                       id="artName"
+                       placeholder="Enter artwork name">
+
+
+                <label>Artist Name</label>
+
+                <input type="text"
+                       id="artistName"
+                       placeholder="Enter artist name">
+
+
+                <label>Category</label>
+
+                <select id="artCategory">
+
+                    <option value="">Select Category</option>
+
+                    <option value="Paintings">
+                        Paintings
+                    </option>
+
+                    <option value="Sculptures">
+                        Sculptures
+                    </option>
+
+                    <option value="Digital Art">
+                        Digital Art
+                    </option>
+
+                    <option value="Photography">
+                        Photography
+                    </option>
+
+                </select>
+
+
+                <label>Price</label>
+
+                <input type="number"
+                       id="artPrice"
+                       placeholder="Enter price">
+
+
+                <label>Description</label>
+
+                <textarea id="artDescription"
+                          placeholder="Enter artwork description">
+                </textarea>
+
+
+                <button onclick="addArtwork()">
+                    Add Artwork
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Manager Responsibilities -->
+
+        <div class="dashboard-section">
+
+            <h2>Manager Responsibilities</h2>
+
+            <ul class="feature-list">
+
+                <li>View customer orders</li>
+
+                <li>Accept orders</li>
+
+                <li>Reject orders</li>
+
+                <li>Update order status</li>
+
+                <li>Add new artworks</li>
+
+                <li>Manage artwork details</li>
+
+                <li>Manage auction artworks</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

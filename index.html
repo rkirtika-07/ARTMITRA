@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Art Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header class="header">
+
+        <div class="logo">
+            <h2>🎨 ArtMitra</h2>
+        </div>
+
+        <div class="search">
+            <input type="text" id="searchBox" placeholder="Search artworks...">
+            <button onclick="searchArt()">Search</button>
+        </div>
+
+        <div class="account">
+            <button onclick="openLogin()">Login</button>
+            <button onclick="openRegister()">Sign Up</button>
+        </div>
+
+    </header>
+
+    <!-- Navigation -->
+    <nav class="menu">
+        <a href="#home">Home</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#artists">Artists</a>
+        <a href="#auction">Auctions</a>
+        <a href="#exhibitions">Exhibitions</a>
+        <a href="#reviews">Reviews</a>
+    </nav>
+
+    <!-- Banner -->
+    <section class="banner" id="home">
+
+        <div class="banner-text">
+            <h1>Discover Beautiful Art</h1>
+            <p>Explore unique artworks from talented artists.</p>
+            <button onclick="document.getElementById('gallery').scrollIntoView()">
+                Explore Gallery
+            </button>
+        </div>
+
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+
+        <h2>Art Categories</h2>
+
+        <div class="category-buttons">
+            <button onclick="filterArt('All')">All Art</button>
+            <button onclick="filterArt('Paintings')">Paintings</button>
+            <button onclick="filterArt('Sculptures')">Sculptures</button>
+            <button onclick="filterArt('Digital Art')">Digital Art</button>
+            <button onclick="filterArt('Photography')">Photography</button>
+        </div>
+
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-section" id="gallery">
+
+        <h2>Featured Artworks</h2>
+
+        <div class="art-grid" id="artGrid">
+
+            <!-- 1 -->
+            <div class="art-card" data-category="Paintings">
+                <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=600&q=80">
+                <h3>Golden Silence</h3>
+                <p>Artist: Ananya Rao</p>
+                <h4>₹5,000</h4>
+                <button onclick="addToCart('Golden Silence',5000)">Add to Cart</button>
+            </div>
+
+            <!-- 2 -->
+            <div class="art-card" data-category="Paintings">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=600&q=80">
+                <h3>Color Harmony</h3>
+                <p>Artist: Riya Sharma</p>
+                <h4>₹4,500</h4>
+                <button onclick="addToCart('Color Harmony',4500)">Add to Cart</button>
+            </div>
+
+            <!-- 3 -->
+            <div class="art-card" data-category="Paintings">
+                <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=600&q=80">
+                <h3>Modern Thoughts</h3>
+                <p>Artist: Arjun Kumar</p>
+                <h4>₹6,000</h4>
+                <button onclick="addToCart('Modern Thoughts',6000)">Add to Cart</button>
+            </div>
+
+            <!-- 4 -->
+            <div class="art-card" data-category="Paintings">
+                <img src="https://images.unsplash.com/photo-1577083288073-40892c0860a4?auto=format&fit=crop&w=600&q=80">
+                <h3>Dream Colors</h3>
+                <p>Artist: Meera Das</p>
+                <h4>₹4,800</h4>
+                <button onclick="addToCart('Dream Colors',4800)">Add to Cart</button>
+            </div>
+
+            <!-- 5 -->
+            <div class="art-card" data-category="Paintings">
+                <img src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?auto=format&fit=crop&w=600&q=80">
+                <h3>Mountain Morning</h3>
+                <p>Artist: Kiran Singh</p>
+                <h4>₹5,500</h4>
+                <button onclick="addToCart('Mountain Morning',5500)">Add to Cart</button>
+            </div>
+
+            <!-- 6 -->
+            <div class="art-card" data-category="Paintings">
+                <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=600&q=80">
+                <h3>Silent Expression</h3>
+                <p>Artist: Neha Verma</p>
+                <h4>₹3,800</h4>
+                <button onclick="addToCart('Silent Expression',3800)">Add to Cart</button>
+            </div>
+
+            <!-- 7 -->
+            <div class="art-card" data-category="Paintings">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=600&q=80">
+                <h3>Blue Emotion</h3>
+                <p>Artist: Kavya Rao</p>
+                <h4>₹3,500</h4>
+                <button onclick="addToCart('Blue Emotion',3500)">Add to Cart</button>
+            </div>
+
+            <!-- 8 -->
+            <div class="art-card" data-category="Paintings">
+                <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=600&q=80">
+                <h3>Creative Energy</h3>
+                <p>Artist: Rahul Dev</p>
+                <h4>₹5,200</h4>
+                <button onclick="addToCart('Creative Energy',5200)">Add to Cart</button>
+            </div>
+
+            <!-- 9 -->
+            <div class="art-card" data-category="Paintings">
+                <img src="https://images.unsplash.com/photo-1577083288073-40892c0860a4?auto=format&fit=crop&w=600&q=80">
+                <h3>Evening Beauty</h3>
+                <p>Artist: Sneha Patel</p>
+                <h4>₹4,200</h4>
+                <button onclick="addToCart('Evening Beauty',4200)">Add to Cart</button>
+            </div>
+
+            <!-- 10 -->
+            <div class="art-card" data-category="Paintings">
+                <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=600&q=80">
+                <h3>Urban Dreams</h3>
+                <p>Artist: Aditya Rao</p>
+                <h4>₹5,700</h4>
+                <button onclick="addToCart('Urban Dreams',5700)">Add to Cart</button>
+            </div>
+
+            <!-- Sculptures -->
+
+            <div class="art-card" data-category="Sculptures">
+                <img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66?auto=format&fit=crop&w=600&q=80">
+                <h3>Human Form</h3>
+                <p>Artist: Vikram Shah</p>
+                <h4>₹8,000</h4>
+                <button onclick="addToCart('Human Form',8000)">Add to Cart</button>
+            </div>
+
+            <div class="art-card" data-category="Sculptures">
+                <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=600&q=80">
+                <h3>Stone Beauty</h3>
+                <p>Artist: Rohit Kumar</p>
+                <h4>₹7,500</h4>
+                <button onclick="addToCart('Stone Beauty',7500)">Add to Cart</button>
+            </div>
+
+            <div class="art-card" data-category="Sculptures">
+                <img src="https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&w=600&q=80">
+                <h3>Creative Shape</h3>
+                <p>Artist: Pooja Singh</p>
+                <h4>₹6,800</h4>
+                <button onclick="addToCart('Creative Shape',6800)">Add to Cart</button>
+            </div>
+
+            <div class="art-card" data-category="Sculptures">
+                <img src="https://images.unsplash.com/photo-1561839561-b13bcfe95249?auto=format&fit=crop&w=600&q=80">
+                <h3>Ancient Spirit</h3>
+                <p>Artist: Manoj Rao</p>
+                <h4>₹9,000</h4>
+                <button onclick="addToCart('Ancient Spirit',9000)">Add to Cart</button>
+            </div>
+
+            <div class="art-card" data-category="Sculptures">
+                <img src="https://images.unsplash.com/photo-1580136608260-5b7c3e6c1c85?auto=format&fit=crop&w=600&q=80">
+                <h3>Future Form</h3>
+                <p>Artist: Varun Das</p>
+                <h4>₹8,500</h4>
+                <button onclick="addToCart('Future Form',8500)">Add to Cart</button>
+            </div>
+
+            <!-- Digital Art -->
+
+            <div class="art-card" data-category="Digital Art">
+                <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=600&q=80">
+                <h3>Digital Dreams</h3>
+                <p>Artist: Akhil Roy</p>
+                <h4>₹3,000</h4>
+                <button onclick="addToCart('Digital Dreams',3000)">Add to Cart</button>
+            </div>
+
+            <div class="art-card" data-category="Digital Art">
+                <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=600&q=80">
+                <h3>Color World</h3>
+                <p>Artist: Isha Kapoor</p>
+                <h4>₹3,800</h4>
+                <button onclick="addToCart('Color World',3800)">Add to Cart</button>
+            </div>
+
+            <div class="art-card" data-category="Digital Art">
+                <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?auto=format&fit=crop&w=600&q=80">
+                <h3>Future Space</h3>
+                <p>Artist: Dev Sharma</p>
+                <h4>₹4,200</h4>
+                <button onclick="addToCart('Future Space',4200)">Add to Cart</button>
+            </div>
+
+            <div class="art-card" data-category="Digital Art">
+                <img src="https://images.unsplash.com/photo-1633412802994-5c058f151b66?auto=format&fit=crop&w=600&q=80">
+                <h3>Galaxy Dreams</h3>
+                <p>Artist: Nisha Rao</p>
+                <h4>₹4,500</h4>
+                <button onclick="addToCart('Galaxy Dreams',4500)">Add to Cart</button>
+            </div>
+
+            <div class="art-card" data-category="Digital Art">
+                <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=600&q=80">
+                <h3>Fantasy World</h3>
+                <p>Artist: Aman Verma</p>
+                <h4>₹3,900</h4>
+                <button onclick="addToCart('Fantasy World',3900)">Add to Cart</button>
+            </div>
+
+            <!-- Photography -->
+
+            <div class="art-card" data-category="Photography">
+                <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=600&q=80">
+                <h3>Nature World</h3>
+                <p>Artist: Suresh Kumar</p>
+                <h4>₹2,500</h4>
+                <button onclick="addToCart('Nature World',2500)">Add to Cart</button>
+            </div>
+
+            <div class="art-card" data-category="Photography">
+                <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=600&q=80">
+                <h3>Mountain View</h3>
+                <p>Artist: Harish Rao</p>
+                <h4>₹2,800</h4>
+                <button onclick="addToCart('Mountain View',2800)">Add to Cart</button>
+            </div>
+
+            <div class="art-card" data-category="Photography">
+                <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=600&q=80">
+                <h3>Peaceful Lake</h3>
+                <p>Artist: Deepika Shah</p>
+                <h4>₹2,700</h4>
+                <button onclick="addToCart('Peaceful Lake',2700)">Add to Cart</button>
+            </div>
+
+            <div class="art-card" data-category="Photography">
+                <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80">
+                <h3>Forest Light</h3>
+                <p>Artist: Sanjay Das</p>
+                <h4>₹2,900</h4>
+                <button onclick="addToCart('Forest Light',2900)">Add to Cart</button>
+            </div>
+
+            <div class="art-card" data-category="Photography">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80">
+                <h3>Golden Sunset</h3>
+                <p>Artist: Lakshmi Rao</p>
+                <h4>₹3,200</h4>
+                <button onclick="addToCart('Golden Sunset',3200)">Add to Cart</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Artists -->
+    <section class="section-box" id="artists">
+
+        <h2>Our Artists</h2>
+
+        <div class="artist-grid">
+
+            <div class="artist-card">
+                <h3>Ananya Rao</h3>
+                <p>Contemporary Painter</p>
+                <p>Specializes in colorful modern paintings.</p>
+            </div>
+
+            <div class="artist-card">
+                <h3>Vikram Shah</h3>
+                <p>Sculpture Artist</p>
+                <p>Creates traditional and modern sculptures.</p>
+            </div>
+
+            <div class="artist-card">
+                <h3>Isha Kapoor</h3>
+                <p>Digital Artist</p>
+                <p>Creates creative digital artwork.</p>
+            </div>
+
+            <div class="artist-card">
+                <h3>Suresh Kumar</h3>
+                <p>Photographer</p>
+                <p>Specializes in nature photography.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Auction -->
+    <section class="section-box" id="auction">
+
+        <h2>Live Auctions</h2>
+
+        <table>
+
+            <tr>
+                <th>Artwork</th>
+                <th>Artist</th>
+                <th>Starting Bid</th>
+                <th>Action</th>
+            </tr>
+
+            <tr>
+                <td>Golden Silence</td>
+                <td>Ananya Rao</td>
+                <td>₹5,000</td>
+                <td>
+                    <button onclick="placeBid('Golden Silence')">Place Bid</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Future Form</td>
+                <td>Varun Das</td>
+                <td>₹8,500</td>
+                <td>
+                    <button onclick="placeBid('Future Form')">Place Bid</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Modern Thoughts</td>
+                <td>Arjun Kumar</td>
+                <td>₹6,000</td>
+                <td>
+                    <button onclick="placeBid('Modern Thoughts')">Place Bid</button>
+                </td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- Exhibitions -->
+    <section class="section-box" id="exhibitions">
+
+        <h2>Upcoming Exhibitions</h2>
+
+        <table>
+
+            <tr>
+                <th>Exhibition</th>
+                <th>Location</th>
+                <th>Date</th>
+            </tr>
+
+            <tr>
+                <td>Colors of Life</td>
+                <td>Hyderabad Art Center</td>
+                <td>15 October 2026</td>
+            </tr>
+
+            <tr>
+                <td>Modern Art Show</td>
+                <td>Vijayawada Gallery</td>
+                <td>25 October 2026</td>
+            </tr>
+
+            <tr>
+                <td>Digital Dreams</td>
+                <td>Online Exhibition</td>
+                <td>5 November 2026</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- Reviews -->
+    <section class="section-box" id="reviews">
+
+        <h2>Customer Reviews</h2>
+
+        <div class="review-box">
+
+            <p><b>Priya:</b> Beautiful collection of paintings.</p>
+            <p><b>Rahul:</b> The gallery is easy to use.</p>
+            <p><b>Meena:</b> I really liked the digital artworks.</p>
+
+        </div>
+
+        <button onclick="openLogin()">
+            Write a Review
+        </button>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <h3>🎨 ArtVista Online Art Gallery</h3>
+
+        <p>Connecting artists and art lovers through a digital platform.</p>
+
+        <p>© 2026 ArtVista. All Rights Reserved.</p>
+
+    </footer>
+
+</div>
+
+
+<!-- Login Popup -->
+<div class="popup" id="loginPopup">
+
+    <div class="popup-content">
+
+        <span class="close" onclick="closePopup()">×</span>
+
+        <h2>Login</h2>
+
+        <input type="email" id="loginEmail" placeholder="Email">
+
+        <input type="password" id="loginPassword" placeholder="Password">
+
+        <select id="loginRole">
+
+            <option value="user">User</option>
+            <option value="manager">Manager</option>
+            <option value="admin">Admin</option>
+
+        </select>
+
+        <button onclick="login()">Login</button>
+
+        <p>Don't have an account?</p>
+
+        <button onclick="switchToRegister()">Create Account</button>
+
+    </div>
+
+</div>
+
+
+<!-- Register Popup -->
+<div class="popup" id="registerPopup">
+
+    <div class="popup-content">
+
+        <span class="close" onclick="closePopup()">×</span>
+
+        <h2>Sign Up</h2>
+
+        <input type="text" id="registerName" placeholder="Full Name">
+
+        <input type="email" id="registerEmail" placeholder="Email">
+
+        <input type="password" id="registerPassword" placeholder="Password">
+
+        <button onclick="register()">Register</button>
+
+        <p>Already have an account?</p>
+
+        <button onclick="switchToLogin()">Login</button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
